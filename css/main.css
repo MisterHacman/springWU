@@ -1,5 +1,7 @@
 body {
 	font-family: sans-serif;
+	background-color: #404060;
+	color: white;
 }
 
 header {
@@ -14,7 +16,8 @@ header h1 {
 }
 
 button {
-	background-color: white;
+	background-color: #00000000;
+	color: white;
 	border: none
 }
 
@@ -29,8 +32,8 @@ button:hover {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	opacity: 0.2;
-	background-color: #000000;
+	opacity: 0.4;
+	background-color: black;
 	z-index: 0;
 }
 
@@ -45,7 +48,7 @@ aside {
 	top: 0;
 	right: -80%;
 	transition: right 1s;
-	background-color: darkgray;
+	background-color: #606080;
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
@@ -57,13 +60,16 @@ aside.visible {
 
 nav {
 	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 nav ul {
-	margin: auto;
+	height: 20%;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	padding: 0;
 }
@@ -72,9 +78,10 @@ nav li {
 	list-style: none;
 }
 
-a {
+nav a {
+	font-size: large;
 	text-decoration: none;
-	color: black;
+	color: white;
 }
 
 footer {
@@ -84,4 +91,17 @@ footer {
 
 #wrapper {
 	z-index: 0;
+}
+
+#guess-section {
+	display: flex;
+	align-items: center;
+}
+
+#element-search-bar {
+	width: 12vh;
+	height: 10vh;
+	border-radius: 0.5rem;
+	font-size: 200%;
+	text-align: center;
 }
