@@ -18,10 +18,12 @@ header h1 {
 button {
 	background-color: #00000000;
 	color: white;
-	border: none
+	border: none;
+	transition: color 0.5s;
 }
 
 button:hover {
+	color: hotpink;
 	cursor: pointer;
 }
 
@@ -95,13 +97,20 @@ footer {
 
 #guess-section {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
-#element-search-bar {
-	width: 12vh;
-	height: 10vh;
+#guess-section button {
+	margin: 2vw;
+}
+
+
+#search-bar {
+	width: 100%;
+	padding: 2vw;
+	border: none;
 	border-radius: 0.5rem;
-	font-size: 200%;
+	font-size: 100%;
 	text-align: center;
 }
