@@ -1,3 +1,7 @@
+:root {
+	--border-radius: 2vw;
+}
+
 body {
 	font-family: sans-serif;
 	background-color: #404060;
@@ -5,6 +9,7 @@ body {
 }
 
 header {
+	flex-grow: 1;
 	display: flex;
 	align-items: center;
 	z-index: 5;
@@ -19,12 +24,6 @@ button {
 	background-color: #00000000;
 	color: white;
 	border: none;
-	transition: color 0.5s;
-}
-
-button:hover {
-	color: hotpink;
-	cursor: pointer;
 }
 
 #fade-layer {
@@ -96,21 +95,82 @@ footer {
 }
 
 #guess-section {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-grow: 2;
+	display: grid;
+	grid-template-areas:
+		"info search submit"
+		"1 suggestions 2";
+	grid-template-rows: auto auto;
 }
 
-#guess-section button {
+#guess-section>button {
 	margin: 2vw;
 }
 
+#rules-button {
+	grid-area: info;
+}
+
+#search-submit {
+	grid-area: submit;
+}
 
 #search-bar {
+	grid-area: search;
 	width: 100%;
-	padding: 2vw;
 	border: none;
-	border-radius: 0.5rem;
-	font-size: 100%;
-	text-align: center;
+	border-radius: var(--border-radius);
+}
+
+#search-bar:focus {
+	outline: none;
+}
+
+#search-bar.with-dropdown {
+	border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+#search-dropdown {
+	grid-area: suggestions;
+	display: flex;
+	flex-direction: column;
+}
+
+#search-dropdown>button {
+	color: black;
+	background-color: white;
+	margin: 0;
+	border: none;
+	text-align: left;
+}
+
+#search-dropdown> :last-child {
+	border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+#search-bar,
+#search-dropdown>button {
+	padding: 2vw;
+	font-size: 150%;
+}
+
+.guessed {
+	display: grid;
+	grid-template-areas:
+		"abbrev img"
+		"pos type"
+		"melt state";
+}
+
+.abbrev {
+	grid-area: abbrev;
+	color: white;
+}
+
+.abbrev.yellow {
+	color: yellow;
+}
+
+.img {
+	grid-area: img;
 }
