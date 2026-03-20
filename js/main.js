@@ -1,16 +1,27 @@
 let wrapper = document.querySelector("#wrapper");
-let menu_button = document.querySelector("#menu-button");
 let fade_layer = document.querySelector("#fade-layer");
 let aside = document.querySelector("aside");
+let menu_button = document.querySelector("#menu-button");
 
 menu_button.addEventListener("click", () => {
 	fade_layer.classList.toggle("visible");
 	aside.classList.toggle("visible");
 });
 
+let rules = document.querySelector("#rules");
+let rules_button = document.querySelector("#rules-btn");
+
+rules_button.addEventListener("click", () => {
+	fade_layer.classList.toggle("visible");
+	rules.classList.toggle("visible");
+});
+
 fade_layer.addEventListener("click", () => {
 	fade_layer.classList.toggle("visible");
-	aside.classList.toggle("visible");
+	if (aside.classList.contains("visible"))
+		aside.classList.remove("visible");
+	if (rules.classList.contains("visible"))
+		rules.classList.remove("visible");
 });
 
 let search_bar = document.querySelector("#search-bar");
@@ -154,6 +165,7 @@ search_submit.addEventListener("click", (e) => {
 		return;
 	}
 	search_bar.value = "";
+	update_search_dropdown("");
 	const element = generateElement(search_term);
 	if (wrapper.childElementCount < 2)
 		wrapper.appendChild(element);
@@ -206,7 +218,7 @@ const periodic_table = {
 	"brom": [35, 4, 17, "Br", "ickemetall", "flytande", -7],
 	"krypton": [36, 4, 18, "Kr", "ädelgas", "gas", -157],
 
-	"rubidium": [37, 5, 1, "Rb", "alkalimetall", "flytande", 39],
+	"rubidium": [37, 5, 1, "Rb", "alkalimetall", "fast", 39],
 	"strontium": [38, 5, 2, "Sr", "alkalisk jordartsmetall", "fast", 777],
 	"yttrium": [39, 5, 3, "Y", "övergångsmetall", "fast", 1526],
 	"zirkonium": [40, 5, 4, "Zi", "övergångsmetall", "fast", 1855],

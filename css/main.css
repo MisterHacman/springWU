@@ -1,11 +1,15 @@
 :root {
 	--border-radius: 2vw;
+	--light-blue-color: #606080;
+	--green-color: lightgreen;
+	--yellow-color: yellow;
+	--white-color: white;
 }
 
 body {
 	font-family: sans-serif;
 	background-color: #404060;
-	color: white;
+	color: var(--white-color);
 }
 
 header {
@@ -15,14 +19,15 @@ header {
 	z-index: 5;
 }
 
-header h1 {
+h1,
+h2 {
 	width: 100%;
 	text-align: center;
 }
 
 button {
 	background-color: #00000000;
-	color: white;
+	color: var(--white-color);
 	border: none;
 }
 
@@ -49,7 +54,7 @@ aside {
 	top: 0;
 	right: -80%;
 	transition: right 1s;
-	background-color: #606080;
+	background-color: var(--light-blue-color);
 	display: flex;
 	flex-direction: column;
 	z-index: 10;
@@ -88,6 +93,73 @@ nav a {
 footer {
 	height: 20%;
 	background-color: darkblue;
+}
+
+#rules {
+	position: fixed;
+	top: -50%;
+	transition: top 1s;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 60vw;
+	height: 80vh;
+	padding: 5%;
+	background-color: var(--light-blue-color);
+	border: solid;
+	border-radius: var(--border-radius);
+	overflow-y: scroll;
+	z-index: 8;
+}
+
+#rules.visible {
+	top: 50%;
+}
+
+#rules article {
+	display: flex;
+	flex-direction: column;
+}
+
+#rules span {
+	margin: 2% 0 2% 0;
+}
+
+#colors {
+	display: flex;
+	gap: 2%;
+}
+
+#colors>* {
+	width: 100%;
+	height: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	border-radius: var(--border-radius);
+}
+
+#white {
+	background-color: var(--white-color);
+}
+
+#yellow {
+	background-color: var(--yellow-color);
+}
+
+#green {
+	background-color: var(--green-color);
+}
+
+#rules ul {
+	display: flex;
+	flex-direction: column;
+	margin: auto auto 5% auto;
+	padding: 0;
+}
+
+#rules ul li {
+	list-style: none;
 }
 
 #wrapper {
@@ -215,9 +287,9 @@ hr {
 }
 
 .yellow {
-	color: yellow;
+	color: var(--yellow-color);
 }
 
 .green {
-	color: lightgreen;
+	color: var(--green-color);
 }
