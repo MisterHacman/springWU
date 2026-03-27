@@ -103,7 +103,7 @@ footer {
 	transform: translate(-50%, -50%);
 	width: 60vw;
 	height: 80vh;
-	padding: 5%;
+	padding: 5vh;
 	background-color: var(--light-blue-color);
 	border: solid;
 	border-radius: var(--border-radius);
