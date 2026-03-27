@@ -169,7 +169,7 @@ footer {
 	z-index: 0;
 }
 
-#guess-section {
+main {
 	flex-grow: 2;
 	display: grid;
 	grid-template-areas:
@@ -178,7 +178,7 @@ footer {
 	grid-template-rows: auto auto;
 }
 
-#guess-section>button {
+main>button {
 	margin: 2vw;
 }
 
