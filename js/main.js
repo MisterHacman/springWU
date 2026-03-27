@@ -273,7 +273,7 @@ const periodic_table = {
 	"francium": [87, 7, 1, "Fr", "alkalimetall", "flytande", 21],
 	"radium": [88, 7, 2, "Ra", "alkalisk jordartsmetall", "fast", 700],
 	"aktinium": [89, 9, 3, "Ac", "aktinoid", "fast", 1050],
-	"thorium": [90, 9, 4, "Th", "aktinoid", "fast", 1750],
+	"torium": [90, 9, 4, "Th", "aktinoid", "fast", 1750],
 	"protaktinium": [91, 9, 5, "Pa", "aktinoid", "fast", 1572],
 	"uran": [92, 9, 6, "U", "aktinoid", "fast", 1135],
 	"neptunium": [93, 9, 7, "Np", "aktinoid", "fast", 644],
