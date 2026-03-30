@@ -1,9 +1,9 @@
 :root {
-	--border-radius: 2vw;
 	--light-blue-color: #606080;
 	--green-color: lightgreen;
 	--yellow-color: yellow;
 	--white-color: white;
+	--hover-color: hotpink;
 }
 
 body {
@@ -31,6 +31,17 @@ button {
 	border: none;
 }
 
+button,
+a {
+	transition: color 1s;
+}
+
+button:hover,
+a:hover {
+	color: var(--hover-color) !important;
+	cursor: pointer;
+}
+
 #fade-layer {
 	display: none;
 	position: fixed;
@@ -47,36 +58,18 @@ button {
 	display: block;
 }
 
-aside {
-	position: fixed;
-	width: 80%;
-	height: 100%;
-	top: 0;
-	right: -80%;
-	transition: right 1s;
-	background-color: var(--light-blue-color);
-	display: flex;
-	flex-direction: column;
-	z-index: 10;
-}
-
-aside.visible {
-	right: 0;
-}
-
 nav {
-	height: 100%;
+	background-color: var(--light-blue-color);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 nav ul {
-	height: 20%;
 	display: flex;
-	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	gap: 2vw;
 	padding: 0;
 }
 
@@ -88,11 +81,6 @@ nav a {
 	font-size: large;
 	text-decoration: none;
 	color: white;
-}
-
-footer {
-	height: 20%;
-	background-color: darkblue;
 }
 
 #rules {
@@ -163,23 +151,21 @@ footer {
 }
 
 #wrapper {
-	display: flex;
-	flex-direction: column;
-	gap: 10vw;
+	grid-area: wr;
 	z-index: 0;
 }
 
 main {
-	flex-grow: 2;
 	display: grid;
 	grid-template-areas:
 		"info search submit"
 		"1 suggestions 2";
 	grid-template-rows: auto auto;
+	order: 1;
 }
 
 main>button {
-	margin: 2vw;
+	margin: 0 2vw 0 2vw;
 }
 
 #rules-button {
@@ -209,24 +195,18 @@ main>button {
 	grid-area: suggestions;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 #search-dropdown>button {
+	width: 100%;
 	color: black;
 	background-color: white;
-	margin: 0;
-	border: none;
 	text-align: left;
 }
 
-#search-dropdown> :last-child {
+#search-dropdown>:last-child {
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
-}
-
-#search-bar,
-#search-dropdown>button {
-	padding: 2vw;
-	font-size: 150%;
 }
 
 hr {
@@ -235,7 +215,7 @@ hr {
 	height: 1px;
 }
 
-.guessed {
+#wrapper>section {
 	width: 80%;
 	align-self: center;
 	display: grid;
@@ -246,10 +226,10 @@ hr {
 		"state melt";
 	grid-template-rows: 2fr 2fr 1fr 1fr;
 	grid-template-columns: 1fr 2fr;
-	gap: 5vw;
+	gap: 4%;
 }
 
-.guessed>* {
+#wrapper>section>* {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -258,10 +238,9 @@ hr {
 	border: solid;
 	border-radius: var(--border-radius);
 	background-color: #202030;
-	font-size: 150%;
 }
 
-.guessed>img {
+#wrapper>section>img {
 	grid-area: img;
 	width: 100%;
 }
@@ -292,4 +271,150 @@ hr {
 
 .green {
 	color: var(--green-color);
+}
+
+#empty-space-before-footer {
+	padding-top: 5%;
+}
+
+#empty-space-before-footer,
+footer {
+	height: 20vh;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ffffff80;
+	color: #000;
+	display: flex;
+	gap: 1rem;
+}
+
+footer div {
+	padding: 2%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer a {
+	text-decoration: none;
+	color: black;
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		--border-radius: 2vw;
+	}
+
+	nav {
+		position: fixed;
+		width: 80%;
+		height: 100%;
+		top: 0;
+		right: -80%;
+		transition: right 1s;
+		z-index: 10;
+	}
+
+	nav.visible {
+		right: 0;
+	}
+
+	nav ul {
+		flex-direction: column;
+	}
+
+	#wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 10vw;
+	}
+
+	main {
+		flex-grow: 2;
+	}
+
+	#search-bar,
+	#search-dropdown>button {
+		padding: 2vw;
+		font-size: 150%;
+	}
+
+	#wrapper>section>* {
+		font-size: 150%;
+	}
+
+}
+
+@media screen and (min-width: 501px) {
+	:root {
+		--border-radius: 1vw;
+	}
+
+	header>button {
+		display: none;
+	}
+
+	body {
+		display: grid;
+		grid-template-areas:
+			"hd nv"
+			"wr wr"
+			"ft ft";
+		grid-template-columns: 1fr 2fr;
+		gap: 3vw;
+	}
+
+	nav {
+		display: flex;
+		border-radius: var(--border-radius);
+		background-color: var(--light-blue-color);
+	}
+
+	#wrapper {
+		display: grid;
+		grid-template-areas: "mn mn mn";
+		grid-template-rows: auto 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 3vw;
+	}
+
+	#wrapper>*:not(main) {
+		margin: auto;
+	}
+
+	main {
+		grid-area: mn;
+		align-self: start;
+	}
+
+	main>button {
+		height: 0;
+	}
+
+	#rules-btn {
+		justify-self: end;
+	}
+
+	#search-submit {
+		justify-self: start;
+	}
+
+	#search-bar {
+		margin: auto;
+	}
+
+	#search-bar,
+	#search-dropdown>button {
+		padding: 0.5vw;
+		font-size: 100%;
+	}
+
+	hr {
+		display: none;
+	}
 }

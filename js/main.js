@@ -1,11 +1,11 @@
 let wrapper = document.querySelector("#wrapper");
 let fade_layer = document.querySelector("#fade-layer");
-let aside = document.querySelector("aside");
+let nav = document.querySelector("nav");
 let menu_button = document.querySelector("#menu-button");
 
 menu_button.addEventListener("click", () => {
 	fade_layer.classList.toggle("visible");
-	aside.classList.toggle("visible");
+	nav.classList.toggle("visible");
 });
 
 let rules = document.querySelector("#rules");
@@ -18,8 +18,8 @@ rules_button.addEventListener("click", () => {
 
 fade_layer.addEventListener("click", () => {
 	fade_layer.classList.toggle("visible");
-	if (aside.classList.contains("visible"))
-		aside.classList.remove("visible");
+	if (nav.classList.contains("visible"))
+		nav.classList.remove("visible");
 	if (rules.classList.contains("visible"))
 		rules.classList.remove("visible");
 });
@@ -141,7 +141,6 @@ function elementMelt(element) {
 
 function generateElement(element) {
 	let element_container = document.createElement("section");
-	element_container.classList.add("guessed");
 	let type = elementData("type", periodic_table[element][4]);
 	if (periodic_table[element][4] == true_element[4])
 		type.classList.add("green");
@@ -167,13 +166,11 @@ search_submit.addEventListener("click", (e) => {
 	search_bar.value = "";
 	update_search_dropdown("");
 	const element = generateElement(search_term);
-	if (wrapper.childElementCount < 2)
-		wrapper.appendChild(element);
-	else {
+	if (wrapper.childElementCount >= 2) {
 		const hr = document.createElement("hr");
-		wrapper.insertBefore(element, wrapper.childNodes[2]);
-		wrapper.insertBefore(hr, wrapper.childNodes[3]);
+		wrapper.appendChild(hr);
 	}
+	wrapper.appendChild(element)
 });
 
 // [atomnummer, rad, kolumn, förkortning, grupp/typ, fas, smältpunkt]
