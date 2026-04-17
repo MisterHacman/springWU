@@ -19,6 +19,10 @@ header {
 	z-index: 5;
 }
 
+h1 {
+	grid-area: h1;
+}
+
 h1,
 h2 {
 	width: 100%;
@@ -34,12 +38,6 @@ button {
 button,
 a {
 	transition: color 1s;
-}
-
-button:hover,
-a:hover {
-	color: var(--hover-color) !important;
-	cursor: pointer;
 }
 
 #fade-layer {
@@ -83,194 +81,9 @@ nav a {
 	color: white;
 }
 
-#rules {
-	position: fixed;
-	top: -50%;
-	transition: top 1s;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 60vw;
-	height: 80vh;
-	padding: 5vh;
-	background-color: var(--light-blue-color);
-	border: solid;
-	border-radius: var(--border-radius);
-	overflow-y: scroll;
-	z-index: 8;
-}
-
-#rules.visible {
-	top: 50%;
-}
-
-#rules article {
-	display: flex;
-	flex-direction: column;
-}
-
-#rules span {
-	margin: 2% 0 2% 0;
-}
-
-#colors {
-	display: flex;
-	gap: 2%;
-}
-
-#colors>* {
-	width: 100%;
-	height: 10vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: black;
-	border-radius: var(--border-radius);
-}
-
-#white {
-	background-color: var(--white-color);
-}
-
-#yellow {
-	background-color: var(--yellow-color);
-}
-
-#green {
-	background-color: var(--green-color);
-}
-
-#rules ul {
-	display: flex;
-	flex-direction: column;
-	margin: auto auto 5% auto;
-	padding: 0;
-}
-
-#rules ul li {
-	list-style: none;
-}
-
 #wrapper {
 	grid-area: wr;
 	z-index: 0;
-}
-
-main {
-	display: grid;
-	grid-template-areas:
-		"info search submit"
-		"1 suggestions 2";
-	grid-template-rows: auto auto;
-	order: 1;
-}
-
-main>button {
-	margin: 0 2vw 0 2vw;
-}
-
-#rules-button {
-	grid-area: info;
-}
-
-#search-submit {
-	grid-area: submit;
-}
-
-#search-bar {
-	grid-area: search;
-	width: 100%;
-	border: none;
-	border-radius: var(--border-radius);
-}
-
-#search-bar:focus {
-	outline: none;
-}
-
-#search-bar.with-dropdown {
-	border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-#search-dropdown {
-	grid-area: suggestions;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-#search-dropdown>button {
-	width: 100%;
-	color: black;
-	background-color: white;
-	text-align: left;
-}
-
-#search-dropdown>:last-child {
-	border-radius: 0 0 var(--border-radius) var(--border-radius);
-}
-
-hr {
-	width: 100%;
-	flex: 1;
-	height: 1px;
-}
-
-#wrapper>section {
-	width: 80%;
-	align-self: center;
-	display: grid;
-	grid-template-areas:
-		"abbrev img"
-		"pos img"
-		"type type"
-		"state melt";
-	grid-template-rows: 2fr 2fr 1fr 1fr;
-	grid-template-columns: 1fr 2fr;
-	gap: 4%;
-}
-
-#wrapper>section>* {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: solid;
-	border-radius: var(--border-radius);
-	background-color: #202030;
-}
-
-#wrapper>section>img {
-	grid-area: img;
-	width: 100%;
-}
-
-.abbrev {
-	grid-area: abbrev;
-}
-
-.pos {
-	grid-area: pos;
-}
-
-.type {
-	grid-area: type;
-}
-
-.melt {
-	grid-area: melt;
-}
-
-.state {
-	grid-area: state;
-}
-
-.yellow {
-	color: var(--yellow-color);
-}
-
-.green {
-	color: var(--green-color);
 }
 
 #empty-space-before-footer {
@@ -327,27 +140,6 @@ footer a {
 	nav ul {
 		flex-direction: column;
 	}
-
-	#wrapper {
-		display: flex;
-		flex-direction: column-reverse;
-		gap: 10vw;
-	}
-
-	main {
-		flex-grow: 2;
-	}
-
-	#search-bar,
-	#search-dropdown>button {
-		padding: 2vw;
-		font-size: 150%;
-	}
-
-	#wrapper>section>* {
-		font-size: 150%;
-	}
-
 }
 
 @media screen and (min-width: 501px) {
@@ -363,6 +155,7 @@ footer a {
 		display: grid;
 		grid-template-areas:
 			"hd nv"
+			"h1 h1"
 			"wr wr"
 			"ft ft";
 		grid-template-columns: 1fr 2fr;
@@ -375,46 +168,9 @@ footer a {
 		background-color: var(--light-blue-color);
 	}
 
-	#wrapper {
-		display: grid;
-		grid-template-areas: "mn mn mn";
-		grid-template-rows: auto 1fr;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 3vw;
-	}
-
-	#wrapper>*:not(main) {
-		margin: auto;
-	}
-
-	main {
-		grid-area: mn;
-		align-self: start;
-	}
-
-	main>button {
-		height: 0;
-	}
-
-	#rules-btn {
-		justify-self: end;
-	}
-
-	#search-submit {
-		justify-self: start;
-	}
-
-	#search-bar {
-		margin: auto;
-	}
-
-	#search-bar,
-	#search-dropdown>button {
-		padding: 0.5vw;
-		font-size: 100%;
-	}
-
-	hr {
-		display: none;
+	button:hover,
+	a:hover {
+		color: var(--hover-color) !important;
+		cursor: pointer;
 	}
 }
