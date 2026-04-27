@@ -1,14 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/landing-page.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<title>Kemedu</title>
 </head>
 
 <body>
-
+	<header>
+		<h1>Kemedu</h1>
+		<button id="menu-button"><i class="material-icons">menu</i></button>
+	</header>
+	<div id="fade-layer"></div>
+	<nav>
+		<ul>
+			<li><a href="index.html">Hem</a></li>
+			<li><a href="periodic-table.html">Periodic table</a></li>
+			<li><a href="formulas.html">Formelsamling</a></li>
+		</ul>
+	</nav>
+	<h1>Världens största kemiska förening!</h1>
+	<div id="wrapper">
+		<main>
+			<h2>Om oss</h2>
+			<p>Kemed är en förening som vill göra kemi mer tillgängligt, begripligt och engagerande för alla som är
+				nyfikna på ämnet. Vi tror att kemi inte bara handlar om formler och teorier, utan om att förstå världen
+				runt omkring oss – från det allra minsta till det vi möter i vardagen. Genom att ta fram pedagogiska
+				resurser och inspirerande innehåll vill vi sänka tröskeln till ämnet och visa att kemi kan vara både
+				intressant och relevant, oavsett tidigare erfarenhet. Vårt mål är att väcka nyfikenhet, stärka lärandet
+				och bidra till att fler känner sig trygga i att utforska kemins möjligheter.</p>
+		</main>
+		<section id="experiments">
+			<h2>Experiment</h2>
+			<div>
+				<article>
+					<figure>
+						<h3>Elefanttandkräm</h3>
+						<picture>
+							<source media="(min-width: 501px)" srcset="img/elephant-toothpaste-desktop.png">
+							<img src="img/elephant-toothpaste-mobile.png" alt="Elefanttandkräm">
+						</picture>
+						<figcaption>
+							<a title="https://www.flickr.com/photos/eigenadam/, CC BY-SA 2.0 &lt;https://creativecommons.org/licenses/by-sa/2.0&gt;, via Wikimedia Commons"
+								href="https://commons.wikimedia.org/wiki/File:Elephant_Toothpaste_Denver_JDS_Labs.jpg">eigenadam
+								- flickr</a>
+						</figcaption>
+					</figure>
+				</article>
+				<!--<article>
+                    <h2>Galvanisk cell</h2>
+                    <img src="" alt="">
+                </article>
+                <article>
+                    <h2>Elektrisk jonlösning</h2>
+                    <img src="" alt="">
+                </article>-->
+			</div>
+		</section>
+		<section id="news">
+			<h2>Nyheter</h2>
+			<div>
+				<article>
+					<h3>Sjunde raden</h3>
+					<p>År 2016 skapade man grundämnena 113, 115, 117 och 118, d.v.s. nihonium, moskovium, tenness och
+						ogannesson.</p>
+				</article>
+				<article>
+					<h3>Grafen</h3>
+					<p>År 2004 skapades ämnet grafen. Det är en tvådimensionell kolallotrop som liknar grafit.
+						Materialet är det starkaste och tunnaste materialet i världen och har flera användningsområden
+						inom nanoteknik.</p>
+				</article>
+				<article>
+					<h3>CRISPR</h3>
+					<p>CRISPR hittades 1987, men potentialen upptäcktes inte förrän 2005. CRISPR-Cas9, som kan användas
+						för genmodifiering, diskurades i en viktig artikel från 2012. Det är denna</p>
+				</article>
+				<article>
+					<h3>Sjunde raden</h3>
+					<p>År 2016 skapade man grundämnena 113, 115, 117 och 118, d.v.s. nihonium, moskovium, tenness och
+						ogannesson.</p>
+				</article>
+			</div>
+		</section>
+		<section id="img">
+			<h2>Atom</h2>
+			<figure>
+				<img src="img/atom.jpg" alt="atom">
+				<figcaption>Pivoslav Chipsov - Unsplash</figcaption>
+			</figure>
+		</section>
+		<section id="periodic-table">
+			<h2>Periodiska systemet</h2>
+			<figure>
+				<picture>
+					<source media="(min-width: 501px)" srcset="img/periodic-table-desktop.png">
+					<img src="img/periodic-table-phone.png" alt="Periodiska systemet">
+				</picture>
+				<figcaption>Offnfopt - Wikimedia Commons</figcaption>
+			</figure>
+		</section>
+	</div>
+	<div id="empty-space-before-footer"></div>
+	<footer>
+		<div>
+			<span><a href="https://www.instagram.com/simonbogson">Instagram</a></span>
+			<span><a href="https://www.myspace.com/bogsonsimon">Myspace</a></span>
+			<span><a href="https://cat-bounce.com/">Intressant</a></span>
+		</div>
+		<div>
+			<span>© Copyright</span>
+			<span>August Stokes</span>
+			<span>2026</span>
+		</div>
+		<div>
+			<span><a href="https://ptable.com/#Egenskaper">Periodiska systemet</a></span>
+		</div>
+	</footer>
+	<script src="js/main.js"></script>
 </body>
 
 </html>

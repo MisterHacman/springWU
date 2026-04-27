@@ -12,15 +12,12 @@
 	border-radius: var(--border-radius);
 	overflow-y: scroll;
 	z-index: 8;
+	display: flex;
+	flex-direction: column;
 }
 
 #rules.visible {
 	top: 50%;
-}
-
-#rules article {
-	display: flex;
-	flex-direction: column;
 }
 
 #rules span {
@@ -86,6 +83,10 @@ main>button {
 	grid-area: submit;
 }
 
+label {
+	display: none;
+}
+
 #search-bar {
 	grid-area: search;
 	width: 100%;
@@ -111,7 +112,7 @@ main>button {
 #search-dropdown>button {
 	width: 100%;
 	color: black;
-	background-color: white;
+	background-color: var(--white-color);
 	text-align: left;
 }
 
@@ -150,9 +151,10 @@ hr {
 	background-color: #202030;
 }
 
-#wrapper>section>img {
+#wrapper section img {
 	grid-area: img;
 	width: 100%;
+	filter: sepia(1%) hue-rotate(180deg);
 }
 
 .abbrev {

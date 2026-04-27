@@ -1,5 +1,6 @@
 :root {
-	--light-blue-color: #606080;
+	--dark-blue-color: #404060;
+	--light-blue-color: #305080;
 	--green-color: lightgreen;
 	--yellow-color: yellow;
 	--white-color: white;
@@ -8,7 +9,7 @@
 
 body {
 	font-family: sans-serif;
-	background-color: #404060;
+	background-color: var(--dark-blue-color);
 	color: var(--white-color);
 }
 
@@ -49,7 +50,7 @@ a {
 	height: 100%;
 	opacity: 0.4;
 	background-color: black;
-	z-index: 0;
+	z-index: 4;
 }
 
 #fade-layer.visible {
@@ -111,6 +112,7 @@ footer div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 1rem;
 }
 
 footer a {

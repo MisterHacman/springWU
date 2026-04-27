@@ -60,6 +60,11 @@ span {
         grid-template-columns: 2fr 1fr;
     }
 
+    section:nth-child(even) {
+        padding-left: 5vw;
+        border-left: solid;
+    }
+
     section article {
         grid-template-columns: 1fr 1fr;
     }
